@@ -1,13 +1,11 @@
 function insertion_sort(lista) {
     lista.forEach(function(valor, i) {
-        var aux = i;
-
-        while ((aux > 0) && (lista[aux-1] > valor)) {
-            lista[aux] = lista[aux-1];
-            aux -= 1;
+        while ((i > 0) && (lista[i-1] > valor)) {
+            lista[i] = lista[i-1];
+            i -= 1;
         }   
 
-        lista[aux] = valor;
+        lista[i] = valor;
     });
 
     return lista;
