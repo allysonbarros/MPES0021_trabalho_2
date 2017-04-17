@@ -1,14 +1,17 @@
+// Importando os algoritmos de ordenação
 const bubble_sort = require('./bubble_sort');
 const insertion_sort = require('./insertion_sort');
 const selection_sort = require('./selection_sort');
 const shell_sort = require('./shell_sort');
-const variaveis = require('./variaveis')
+
+// Importando e declarando as listas de valores utilizados pelos testes.
+const variaveis = require('./variaveis');
+var listas = [variaveis.lista_1, variaveis.lista_2, variaveis.lista_3, variaveis.lista_4];
 
 // Executando a comparação entre os algoritmos;
-var listas = [variaveis.lista_1, variaveis.lista_2, variaveis.lista_3, variaveis.lista_4];
 listas.forEach(function(lista, index) {
     console.log('\n');
-    console.log('--- Iniciando os testes com a ' + parseInt(index+1) + 'a lista que contém ' + lista.length + ' elementos.');
+    console.log('--- Iniciando os testes com a ' + parseInt(index+1) + 'ª lista que contém ' + lista.length + ' elementos.');
     
     console.time('bubble_sort');
     var resultado = bubble_sort.bubble_sort(lista);

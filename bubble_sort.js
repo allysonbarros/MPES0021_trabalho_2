@@ -1,16 +1,17 @@
 exports.bubble_sort = function(lista) {
+    lista_ordenada = Array.from(lista);
     var trocado;
     do {
         trocado = false;
-        for (var i = 0; i < lista.length - 1; i++) {
-            if (lista[i] > lista[i+1]) {
-                var aux = lista[i];
-                lista[i] = lista[i+1];
-                lista[i+1] = aux;
+        for (var i = 0; i < lista_ordenada.length - 1; i++) {
+            if (lista_ordenada[i] > lista_ordenada[i+1]) {
+                var aux = lista_ordenada[i];
+                lista_ordenada[i] = lista_ordenada[i+1];
+                lista_ordenada[i+1] = aux;
                 trocado = true;
             }
         }
     } while (trocado);
     
-    return lista;
+    return lista_ordenada;
 }

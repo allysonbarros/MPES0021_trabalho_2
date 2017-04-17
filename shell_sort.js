@@ -1,15 +1,16 @@
 exports.shell_sort = function(lista) {
-    for (var h = lista.length; h > 0; h = parseInt(h / 2)) {
-        for (var i = h; i < lista.length; i++) {
-            var k = lista[i];
+    lista_ordenada = Array.from(lista);
+    for (var h = lista_ordenada.length; h > 0; h = parseInt(h / Math.floor(Math.random() * 10) + 1)) {
+        for (var i = h; i < lista_ordenada.length; i++) {
+            var k = lista_ordenada[i];
             
-            for (var j = i; j >= h && k < lista[j - h]; j -= h) {
-                lista[j] = lista[j - h];
+            for (var j = i; j >= h && k < lista_ordenada[j - h]; j -= h) {
+                lista_ordenada[j] = lista_ordenada[j - h];
             }
 
-            lista[j] = k;
+            lista_ordenada[j] = k;
         }
     }
     
-    return lista;
+    return lista_ordenada;
 }
