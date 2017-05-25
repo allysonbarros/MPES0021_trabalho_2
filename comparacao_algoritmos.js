@@ -38,5 +38,9 @@ listas.forEach(function(lista, index) {
     console.time('heap_sort');
     resultado = heap_sort.heap_sort(lista);
     console.timeEnd('heap_sort');
+
+    console.time('quick_sort');
+    resultado = quick_sort.quick_sort(lista);
+    console.timeEnd('quick_sort');
 });
 console.log('\n');
