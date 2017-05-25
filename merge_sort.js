@@ -18,7 +18,7 @@ function unir_listas(esquerda, direita) {
     return resultado;
 }
 
-exports.merge_sort = function(lista) {
+function merge_sort(lista) {
     lista_ordenada = Array.from(lista);
     
     var tamanho = lista_ordenada.length;
@@ -30,5 +30,7 @@ exports.merge_sort = function(lista) {
       return lista_ordenada;
     }
 
-    return unir_listas(ordenar(esquerda), ordenar(direita));
+    return unir_listas(merge_sort(esquerda), merge_sort(direita));
 }
+
+exports.merge_sort = merge_sort;
