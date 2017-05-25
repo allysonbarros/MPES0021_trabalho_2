@@ -8,7 +8,7 @@ const shell_sort = require('./shell_sort');
 const heap_sort = require('./heap_sort');
 const quick_sort = require('./quick_sort');
 const merge_sort = require('./merge_sort');
-// const radix_sort = require('./radix_sort');
+const radix_sort = require('./radix_sort');
 
 // Importando e declarando as listas de valores utilizados pelos testes.
 const variaveis = require('./variaveis');
@@ -46,5 +46,9 @@ listas.forEach(function(lista, index) {
     console.time('merge_sort');
     resultado = merge_sort.merge_sort(lista);
     console.timeEnd('merge_sort');
+
+    console.time('radix_sort');
+    resultado = radix_sort.radix_sort(lista);
+    console.timeEnd('radix_sort');
 });
 console.log('\n');
