@@ -48,7 +48,7 @@ listas.forEach(function(lista, index) {
     console.timeEnd('merge_sort');
 
     console.time('radix_sort');
-    resultado = radix_sort.radix_sort(lista);
+    resultado = radix_sort.radix_sort([10, 499, 760, 154, 5, 99201]);
     console.timeEnd('radix_sort');
 });
 console.log('\n');

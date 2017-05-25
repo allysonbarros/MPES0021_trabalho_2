@@ -1,3 +1,5 @@
+// https://www.youtube.com/watch?v=YXFI4osELGU
+
 function get_digito(numero, index) {
   var digito = 0;
   while(index--){
@@ -9,28 +11,30 @@ function get_digito(numero, index) {
 
 exports.radix_sort = function(lista) {
     var lista_ordenada = Array.from(lista);
+    console.log(lista_ordenada);
     var maximo = Math.floor(Math.log10(Math.max.apply(Math, lista_ordenada)));
-    var digitos = [];
+    var array_digitos = [];
     var idx = 0;
 
     for(var i = 0;i < maximo + 1; i++) {
-        digitos = []
+        array_digitos = []
 
         for(var j = 0; j < lista_ordenada.length; j++) {
             var digito = get_digito(lista_ordenada[j], i+1);
-            digitos[digito] = digitos[digito] || [];
-            digitos[digito].push(lista_ordenada[j]);
+            array_digitos[digito] = array_digitos[digito] || [];
+            array_digitos[digito].push(lista_ordenada[j]);
         }
 
         idx = 0
-        for(var t = 0; t < digitos.length; t++){
-            if(digitos[t] && digitos[t].length > 0) {
-                for(j = 0; j < digitos[t].length; j++) {
-                    lista_ordenada[idx++] = digitos[t][j];
+        for(var t = 0; t < array_digitos.length; t++){
+            if(array_digitos[t] && array_digitos[t].length > 0) {
+                for(j = 0; j < array_digitos[t].length; j++) {
+                    lista_ordenada[idx++] = array_digitos[t][j];
                 }
             }
         }
     }
 
+    console.log(lista_ordenada);
     return lista_ordenada;
 }

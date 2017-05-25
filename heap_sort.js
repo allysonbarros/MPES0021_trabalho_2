@@ -1,3 +1,5 @@
+// https://www.youtube.com/watch?v=51JGP4VVlDc
+
 function trocar_posicao(lista, i, j) {
     var aux = lista[i];
     lista[i] = lista[j];

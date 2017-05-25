@@ -1,3 +1,5 @@
+// https://www.youtube.com/watch?v=e5ik2UGjHBk
+
 function unir_listas(esquerda, direita) {
     var resultado = [];
 
