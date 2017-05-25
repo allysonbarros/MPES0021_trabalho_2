@@ -42,5 +42,9 @@ listas.forEach(function(lista, index) {
     console.time('quick_sort');
     resultado = quick_sort.quick_sort(lista);
     console.timeEnd('quick_sort');
+
+    console.time('merge_sort');
+    resultado = merge_sort.merge_sort(lista);
+    console.timeEnd('merge_sort');
 });
 console.log('\n');
