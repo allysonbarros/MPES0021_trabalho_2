@@ -29,7 +29,6 @@ exports.quick_sort = function(lista, esquerda=0, direita=0) {
         salto = esquerda + Math.ceil((direita - esquerda) * 0.5)
         novo_salto = particionar_lista(lista_ordenada, salto, esquerda, direita);
         
-        // recursively sort to the left and right
         sort(lista_ordenada, esquerda, novo_salto - 1);
         sort(lista_ordenada, novo_salto + 1, direita);
     }
