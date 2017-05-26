@@ -11,7 +11,6 @@ function get_digito(numero, index) {
 
 exports.radix_sort = function(lista) {
     var lista_ordenada = Array.from(lista);
-    console.log(lista_ordenada);
     var maximo = Math.floor(Math.log10(Math.max.apply(Math, lista_ordenada)));
     var array_digitos = [];
     var idx = 0;
@@ -35,6 +34,5 @@ exports.radix_sort = function(lista) {
         }
     }
 
-    console.log(lista_ordenada);
     return lista_ordenada;
 }
