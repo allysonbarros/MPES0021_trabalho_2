@@ -1,9 +1,3 @@
-// Importando os algoritmos de ordenação menos eficientes.
-const bubble_sort = require('./bubble_sort');
-const insertion_sort = require('./insertion_sort');
-const selection_sort = require('./selection_sort');
-const shell_sort = require('./shell_sort');
-
 // Importando os algoritmos de ordenação mais eficientes.
 const heap_sort = require('./heap_sort');
 const quick_sort = require('./quick_sort');
@@ -18,22 +12,6 @@ var listas = [variaveis.lista_1, variaveis.lista_2, variaveis.lista_3, variaveis
 listas.forEach(function(lista, index) {
     console.log('\n');
     console.log('--- Iniciando os testes com a ' + parseInt(index+1) + 'ª lista que contém ' + lista.length + ' elementos.');
-    
-    // console.time('bubble_sort');
-    // var resultado = bubble_sort.bubble_sort(lista);
-    // console.timeEnd('bubble_sort');
-
-    // console.time('insertion_sort');
-    // var resultado = insertion_sort.insertion_sort(lista);
-    // console.timeEnd('insertion_sort');
-
-    // console.time('selection_sort');
-    // resultado = selection_sort.selection_sort(lista);
-    // console.timeEnd('selection_sort');
-
-    // console.time('shell_sort');
-    // resultado = shell_sort.shell_sort(lista);
-    // console.timeEnd('shell_sort');
 
     console.time('heap_sort');
     resultado = heap_sort.heap_sort(lista);
@@ -48,7 +26,7 @@ listas.forEach(function(lista, index) {
     console.timeEnd('merge_sort');
 
     console.time('radix_sort');
-    resultado = radix_sort.radix_sort([10, 499, 760, 154, 5, 99201]);
+    resultado = radix_sort.radix_sort(lista);
     console.timeEnd('radix_sort');
 });
 console.log('\n');
