@@ -23,7 +23,7 @@ function particionar_lista(lista, salto, esquerda, direita) {
     return index;
 }
 
-exports.quick_sort = function(lista, esquerda=0, direita=0) {
+function quick_sort(lista, esquerda=0, direita=0) {
     var lista_ordenada = Array.from(lista);
     var salto = null;
 
@@ -31,9 +31,11 @@ exports.quick_sort = function(lista, esquerda=0, direita=0) {
         salto = esquerda + Math.ceil((direita - esquerda) * 0.5)
         novo_salto = particionar_lista(lista_ordenada, salto, esquerda, direita);
         
-        sort(lista_ordenada, esquerda, novo_salto - 1);
-        sort(lista_ordenada, novo_salto + 1, direita);
+        quick_sort(lista_ordenada, esquerda, novo_salto - 1);
+        quick_sort(lista_ordenada, novo_salto + 1, direita);
     }
 
     return lista_ordenada;
 }
+
+exports.quick_sort = quick_sort;
